@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Montserrat;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+body {
+    overflow-x: hidden;
+    background:#3B185F;
+}
+.container {
+    position: relative;
+    width: 100%;
+}
+.navigation {
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    left: -100%;
+    background: #2A0944;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 10;
+    transition: left 0.5s;
+}
+.container.active .navigation {
+    left: 0;
+}
+.navigation ul {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 500px;
+    width: 100%;
+    padding: 20px 40px;
+}
+.navigation ul li {
+    list-style: none;
+    position: relative;
+    width: 100%;
+}
+.navigation ul li a {
+    position: relative;
+    text-decoration: none;
+    margin: 15px 0;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: rgb(192, 181, 181);
+}
+.navigation ul li a:hover {
+    border-bottom: 1px solid rgb(192, 181, 181);
+}
+.btn a {
+    font-family: Montserrat;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    white-space: normal;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #111;
+    background: #F9A825;
+    box-shadow: 0px 5px 9px rgba(0,0,0,0.4); ;
+}
+.main {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    transition: width 0.5s, filter 0.8s;
+}
+.container.active .main {
+    filter:grayscale(0.5);
+}
+.main .topBar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    z-index: 10000;
+    transition: all 0.5s;
+}
+.topBar.sticky {
+    padding: 0 40px;
+    background: #2A0944;
+}
+.main .topBar a {
+    font-family: Montserrat;
+    text-decoration: none;
+    font-size: 1.4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+}
+.main .topBar .toggle {
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+}
+.main .topBar .toggle ion-icon {
+    font-size: 1.6em;
+    pointer-events: none;
+}
+section {
+    position: relative;
+    min-height: 100vh;
+}
+.banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+.imgContainer {
+    overflow-x: scroll;
+}
+.banner .images {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    opacity: 0.6;
+    transition: left 0.5s;
+}
+.banner .images span {
+    position: relative;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.banner .images span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.banner .content {
+    position: relative;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+ h1 {
+    font-family: carter one;
+    font-size: 4vw;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+}
+ h4 {
+    font-family: Montserrat;
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: whitesmoke;
+}
+.banner .content .btn {
+    align-self: center;
+}
+.banner .slideToggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.banner .slideToggle ion-icon {
+    font-size: 2.5em;
+    cursor: pointer;
+    color: #fff;
+}
+.adjust {
+    margin: 10px 100px;
+    padding-top: 100px;
+}
+.title {
+    position: relative;
+    font-size: 1.9em;
+    text-align: center;
+    color: #fff;
+}
+.happenings .box {
+    position: relative;
+    margin-top: 40px;
+    /* background-color: #fff; */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.happenings .box .col {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px;
+}
+.cards {
+    position: relative;
+    width: 350px;
+    height: 550px;
+    margin-top: 50px;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #111;
+    box-shadow: 10px 0px 0px rgba(0, 0, 0, 0.2);
+}
+.capsule {
+    border-radius: 200px;
+}
+.capsule .imgBx {
+    position: relative;
+    /* width: 190px;
+    height: 140px; */
+    width: 300px;
+    height: 170px;
+    overflow: hidden;
+}
+.capsule .imgBx img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.capsule .textBx {
+    margin-top: 20px;
+    display: grid;
+    place-items: center;
+}
+.capsule .textBx h1 {
+    font-size: 1.5em;
+}
+.capsule .textBx h4 {
+    font-size: 1em;
+    margin: 10px 0px;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    top: 11em;
+    left: 60em;
+    width: 100%;
+    height: 20%;
+    border-radius: 10em;
+    background: rgb(255, 166, 0);
+    box-shadow: -90em 15em 0px rgb(255, 166, 0),
+                0px 25em 0px rgb(255, 166, 0); 
+
+}
+.about .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.shapedBx {
+    position: relative;
+    width: 80em;
+    height: 50em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 40px;
+    z-index: 1;
+    /* background: #111; */
+}
+.shapedBx::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/RectangleBlack.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: -1;
+}
+.shapedBx h2 {
+    font-size: 2.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #fff;
+    padding-bottom: 2em;
+}
+.shapedBx h4 {
+    font-size: 2.4em;
+    font-weight: 600;
+}
+.shapedBx p {
+    color: #fff;
+    width: 80%;
+    margin-top: 30px;
+    line-height: 1.5em;
+}
+.about .btn a{
+    background: rgb(157, 11, 170);
+    margin-right: 5em;
+    border: 2px solid rgb(157, 11, 170);
+}
+.about .btn:hover a {
+    background: transparent;
+    color: rgb(157, 11, 170);   
+}
+.work {
+    background-image: url(./images/hands.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15em;
+    box-shadow: 0 -29em 0 rgba(255, 255, 255, 1);
+    z-index: -1;
+}
+.work .tags {
+    position: absolute;
+    top: -7em;
+    left: 0;
+    display: flex;
+}
+.tags h1 {
+    position: relative;
+    font-size: 1em;
+    margin: 25px;
+    width: 100px;
+    aspect-ratio: 1;
+    background: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2)
+}
+.tags h1::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 50px solid transparent;
+    border-top: 50px solid purple;
+}
+.work .content {
+    position: relative;
+    width: 500px;
+}
+.work .content h4 {
+    font-size: 2.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.work .content p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    color: #fff;
+    margin-top: 40px;
+}
+.work .content .btn a{
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+    background: transparent;
+    color: rgb(157, 11, 170);
+    border: 2px solid rgb(157, 11, 170);
+    cursor: pointer;
+}
+.gallery {
+    display: grid;
+    place-items: center;
+}
+.gallery .container {
+    position: relative;
+    top: 50px;
+    width: 60em;
+    height: 25em;
+    padding: 30px 0;
+    background: rgb(141, 11, 124);
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.gallery .container::before {
+    content: "";
+    position: absolute;
+    top: -8em;
+    left: -3em;
+    border: 20em solid transparent;
+    border-left: 20em solid rgb(141, 11, 124);
+}
+.gallery .container::after {
+    content: "";
+    position: absolute;
+    top: -8em;
+    right: -3em;
+    border: 20em solid transparent;
+    border-right: 20em solid rgb(141, 11, 124);
+    z-index: -1;
+}
+.gallery .container .box {
+    display: grid;
+    place-items: center;
+}
+.gallery .container .box .oval{
+    width: 15em;
+    height: 10em;
+    border-radius: 50%;
+    background-image: url(./images/Gift_re_qr17\ 1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10em;
+}
+.gallery .container .box:nth-child(2) .oval {
+    background-image: url(./images/better_world_9xfd\ 1.png);
+}
+.campagins .container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.campagins .container .cards {
+    width: 350px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 3em;
+    padding: 20px;
+    justify-content: flex-start;
+}
+.campagins .container .cards .imgBx {
+    position: relative;
+    width: 300px;
+    height: 50%;
+    max-height: 200px;
+    background: red;
+    overflow: hidden;
+    border-radius: 2em;
+}
+.campagins .container .cards .imgBx img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.campagins .container .cards .contentBx {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    place-items: center;
+}
+.campagins .container .cards .contentBx .textBx {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.campagins .progressBar {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+.campagins .progressBar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: blue;
+    border-radius: 5px;
+}
+.campagins .cards:nth-child(2) .progressBar::before {
+    width: 10%;
+}
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 50px;
+    background: #2A0944;
+    color: #fff;
+}
+footer .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+footer .container h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.donate p {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 30px 0;
+}
+footer p{
+    font-size: 1em;
+    line-height: 1.5em;
+}
+footer .links ul {
+    position: relative;
+}
+footer .links ul li {
+    list-style: none;
+}
+footer .links ul li a {
+    color: #f7f7f7;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+footer .links li a:hover{
+    color: #ffeb3b;
+}
+@media (max-width: 767px) {
+    .main .topBar {
+        padding: 10px 15px;
+    }
+    .banner h1 {
+        font-size: 2em;
+    }
+    .navigation {
+        width: 250px;
+        height: 100vh;
+    }
+    .navigation ul li a {
+        font-size: 1.2em;
+    }
+    .adjust {
+        margin: 10px 20px;
+    }
+    .happenings .title {
+        font-size: 1.5em;
+    }
+    .happenings .box {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .happenings .box .col {
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    .happenings .cards {
+        width: 250px;
+        height: 450px;
+    }
+    .capsule .imgBx {
+        width: 200px;
+        height: 120px;
+    }
+    .btn a {
+        padding: 5px 15px;
+        font-size: 1em;
+    }
+}
